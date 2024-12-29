@@ -38,7 +38,8 @@ function Navbar() {
     <div className="flex justify-between p-2 items-center border-b border-b-black border-solid">
       <div className="left">
         <Link to="/">
-          <img src={logo} className="h-14" alt="" />
+          {/* <img src={logo} className="h-14" alt="" /> */}
+          <h1 className="text-5xl ">LOGO</h1>
         </Link>
       </div>
 

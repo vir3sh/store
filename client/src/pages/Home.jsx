@@ -1,30 +1,8 @@
 import { useState } from "react";
-import lady from "../assets/ecommercewebsitelady.webp";
+import mainpageboy from "../assets/mainpage.jpg";
 import { FaCartPlus, FaRegHeart } from "react-icons/fa";
+import NewsLetter from "../components/NewsLetter";
 function Home() {
-  const Category = [
-    {
-      id: 1,
-      name: "shirt",
-    },
-    {
-      id: 2,
-      name: "pant",
-    },
-    {
-      id: 3,
-      name: "hoodie",
-    },
-    {
-      id: 4,
-      name: "suit",
-    },
-    {
-      id: 5,
-      name: "shoes",
-    },
-  ];
-
   const Products = [
     {
       id: 2,
@@ -179,12 +157,15 @@ function Home() {
   const [category, setCategory] = useState("");
   console.log(category);
 
+  const filteredProducts = category
+    ? Products.filter((product) => product.category === category)
+    : Products;
   return (
     <div className="w-full">
       {/* Main Banner Section */}
       <div className="flex justify-between items-center w-full p-4">
         {/* Text Section */}
-        <div className="main w-full sm:w-2/5 lg:w-2/5 p-4">
+        <div className="main w-full sm:w-1/2 lg:w-1/2 p-4">
           <h3 className="text-4xl font-semibold mb-2">
             Men Full Sleeve Solid Hooded Sweatshirt
           </h3>
@@ -200,7 +181,7 @@ function Home() {
         {/* Image Section */}
         <div className="image-section w-full sm:w-3/5 lg:w-3/5">
           <img
-            src={lady}
+            src={mainpageboy}
             alt="Product"
             className="w-full h-[500px] object-cover rounded-lg shadow-lg"
           />
@@ -214,19 +195,30 @@ function Home() {
         </h3>
         <div className="flex flex-row justify-center">
           {Products.length > 0 ? (
-            Products.map((item) => (
+            <div className="flex flex-wrap gap-2">
               <div
-                key={item.id}
-                className=" bg-black text-white p-2 px-5 mx-1 rounded-3xl shadow-md hover:bg-neutral-900"
-                onClick={() => setCategory(item.category)}
+                className={`bg-black text-white p-2 px-5 mx-1 rounded-3xl shadow-md hover:bg-neutral-900 ${
+                  category === "" ? "bg-neutral-900" : ""
+                }`}
+                onClick={() => setCategory("")}
               >
-                <div className="no">
+                <p className="text-center text-xl font-medium">All</p>
+              </div>
+
+              {Products.map((item, index) => (
+                <div
+                  key={index}
+                  className={`bg-black text-white p-2 px-5 mx-1 rounded-3xl shadow-md hover:bg-neutral-900 ${
+                    category === item.category ? "bg-neutral-900" : ""
+                  }`}
+                  onClick={() => setCategory(item.category)}
+                >
                   <p className="text-center text-xl font-medium">
-                    {item.category}{" "}
+                    {item.category}
                   </p>
                 </div>
-              </div>
-            ))
+              ))}
+            </div>
           ) : (
             <div className="no">
               <p>Sorry, no categories available</p>
@@ -236,14 +228,17 @@ function Home() {
       </div>
 
       {/* Product Cards Section */}
-      <div className="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-9">
-        {Products.map((product) => (
+      <div className="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-9 ">
+        {filteredProducts.map((product) => (
           <div
             key={product.id}
             className="card border p-4 rounded-lg shadow-lg hover:shadow-2xl transition-all relative"
           >
             {/* Wishlist Icon (top-left) */}
-            <div className="absolute top-2 left-2 bg-white rounded-full p-2 shadow-md hover:bg-red-100 transition-all">
+            <div
+              className="absolute    bg-white rounded-full p-2 shadow-md hover:bg-red-100 transition-all"
+              style={{ top: "20px", left: "20px" }}
+            >
               <FaRegHeart
                 size={20} // Adjusted the size
                 className="text-red-500 hover:text-red-700 cursor-pointer"
@@ -251,7 +246,10 @@ function Home() {
             </div>
 
             {/* Cart Icon (top-right) */}
-            <div className="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-all">
+            <div
+              className="absolute  bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-all"
+              style={{ top: "20px", right: "20px" }}
+            >
               <FaCartPlus
                 size={20} // Adjusted the size
                 className="text-black hover:text-gray-700 cursor-pointer"
@@ -262,6 +260,11 @@ function Home() {
               src={product.image}
               alt={product.name}
               className="w-full h-[300px] object-cover rounded-lg mb-4"
+              style={{
+                position: "relative",
+                filter: "brightness(0.9)",
+                zIndex: "-1",
+              }}
             />
             <p className="text-xs font-semibold">{product.brand}</p>
             <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
@@ -280,6 +283,8 @@ function Home() {
           </div>
         ))}
       </div>
+
+      <NewsLetter />
     </div>
   );
 }

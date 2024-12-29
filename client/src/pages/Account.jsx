@@ -95,56 +95,56 @@ function Account() {
 
   return (
     <div className="flex justify-center text-center">
-      <div className="w-2/5">
-        <ul className="p-4 space-y-2" style={{ marginTop: "8px" }}>
+      <div className="w-1/5">
+        <ul className="p-4 " style={{ marginTop: "8px" }}>
           <li
-            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
-      ${
-        section === "profile"
-          ? "bg-black text-white"
-          : "hover:bg-black hover:text-white"
-      }
-      active:transform active:scale-98
-      font-medium tracking-wide`}
+            className={`p-3 border border-black cursor-pointer transition-all
+            ${
+              section === "profile"
+                ? "bg-black text-white"
+                : "hover:bg-black hover:text-white"
+            }
+            active:transform active:scale-98
+            font-medium tracking-wide`}
             onClick={() => setSection("profile")}
           >
             My Profile
           </li>
           <li
-            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
-      ${
-        section === "cart"
-          ? "bg-black text-white"
-          : "hover:bg-black hover:text-white"
-      }
-      active:transform active:scale-98
-      font-medium tracking-wide`}
+            className={`p-3 border border-black  cursor-pointer transition-all
+            ${
+              section === "cart"
+                ? "bg-black text-white"
+                : "hover:bg-black hover:text-white"
+            }
+            active:transform active:scale-98
+            font-medium tracking-wide`}
             onClick={() => setSection("cart")}
           >
             My Cart
           </li>
           <li
-            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
-      ${
-        section === "wishlist"
-          ? "bg-black text-white"
-          : "hover:bg-black hover:text-white"
-      }
-      active:transform active:scale-98
-      font-medium tracking-wide`}
+            className={`p-3 border border-black cursor-pointer transition-all
+            ${
+              section === "wishlist"
+                ? "bg-black text-white"
+                : "hover:bg-black hover:text-white"
+            }
+            active:transform active:scale-98
+            font-medium tracking-wide`}
             onClick={() => setSection("wishlist")}
           >
             My Wishlist
           </li>
           <li
-            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
-      ${
-        section === "account"
-          ? "bg-black text-white"
-          : "hover:bg-black hover:text-white"
-      }
-      active:transform active:scale-98
-      font-medium tracking-wide`}
+            className={`p-3 border border-black  cursor-pointer transition-all
+            ${
+              section === "account"
+                ? "bg-black text-white"
+                : "hover:bg-black hover:text-white"
+            }
+            active:transform active:scale-98
+            font-medium tracking-wide`}
             onClick={() => setSection("account")}
           >
             Account Setting
@@ -152,7 +152,7 @@ function Account() {
         </ul>
       </div>
 
-      <div className="w-2/5 ">
+      <div className="w-4/5 ">
         <ul className="p-3 m-3 ">
           {section === "profile" && (
             <div className="profiles-section flex flex-col items-center p-8 bg-white border border-black rounded-lg h-[600px]">
