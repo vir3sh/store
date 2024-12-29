@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import profileimg from "../assets/profileicon.png";
 function Account() {
-  const [section, setSection] = useState("");
+  const [section, setSection] = useState("profile");
 
   const cartItems = [
     {
@@ -96,39 +96,55 @@ function Account() {
   return (
     <div className="flex justify-center text-center">
       <div className="w-2/5">
-        <ul className="p-4 space-y-2">
+        <ul className="p-4 space-y-2" style={{ marginTop: "8px" }}>
           <li
-            className="p-4 border-2 border-black rounded-lg cursor-pointer transition-all
-                 hover:bg-black hover:text-white
-                 active:transform active:scale-98
-                 font-medium tracking-wide"
+            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
+      ${
+        section === "profile"
+          ? "bg-black text-white"
+          : "hover:bg-black hover:text-white"
+      }
+      active:transform active:scale-98
+      font-medium tracking-wide`}
             onClick={() => setSection("profile")}
           >
             My Profile
           </li>
           <li
-            className="p-4 border-2 border-black rounded-lg cursor-pointer transition-all
-                 hover:bg-black hover:text-white
-                 active:transform active:scale-98
-                 font-medium tracking-wide"
+            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
+      ${
+        section === "cart"
+          ? "bg-black text-white"
+          : "hover:bg-black hover:text-white"
+      }
+      active:transform active:scale-98
+      font-medium tracking-wide`}
             onClick={() => setSection("cart")}
           >
             My Cart
           </li>
           <li
-            className="p-4 border-2 border-black rounded-lg cursor-pointer transition-all
-                 hover:bg-black hover:text-white
-                 active:transform active:scale-98
-                 font-medium tracking-wide"
+            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
+      ${
+        section === "wishlist"
+          ? "bg-black text-white"
+          : "hover:bg-black hover:text-white"
+      }
+      active:transform active:scale-98
+      font-medium tracking-wide`}
             onClick={() => setSection("wishlist")}
           >
             My Wishlist
           </li>
           <li
-            className="p-4 border-2 border-black rounded-lg cursor-pointer transition-all
-                 hover:bg-black hover:text-white
-                 active:transform active:scale-98
-                 font-medium tracking-wide"
+            className={`p-3 border border-black rounded-lg cursor-pointer transition-all
+      ${
+        section === "account"
+          ? "bg-black text-white"
+          : "hover:bg-black hover:text-white"
+      }
+      active:transform active:scale-98
+      font-medium tracking-wide`}
             onClick={() => setSection("account")}
           >
             Account Setting
@@ -139,7 +155,7 @@ function Account() {
       <div className="w-2/5 ">
         <ul className="p-3 m-3 ">
           {section === "profile" && (
-            <div className="profiles-section flex flex-col items-center p-8 bg-white border-2 border-black rounded-lg h-[600px]">
+            <div className="profiles-section flex flex-col items-center p-8 bg-white border border-black rounded-lg h-[600px]">
               {/* Profile Image Section */}
               <div className="relative mb-6">
                 <img
@@ -261,27 +277,27 @@ function Account() {
           )}
 
           {section === "wishlist" && (
-            <div className="mywishlist-section p-6 bg-white shadow-lg rounded-md border border-gray-200 h-[600px] flex flex-col">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">
+            <div className="mywishlist-section p-6 bg-white shadow-lg rounded-md border border-black h-[600px] flex flex-col">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-6">
                 My Wishlist
               </h2>
 
               <div className="wishlist-items flex-1 overflow-y-auto mb-4 pr-2">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {wishlistItems.length > 0 ? (
                     wishlistItems.map((item, index) => (
                       <div
                         key={index}
-                        className="flex justify-between items-center border border-gray-200 rounded-md p-4 hover:shadow-md transition-shadow"
+                        className="flex justify-between items-center border border-gray-200 rounded-md p-6 hover:shadow-lg transition-shadow duration-200 ease-in-out"
                       >
-                        <div className="flex items-center flex-1">
+                        <div className="flex items-center flex-1 space-x-4">
                           <img
                             src={item.image}
                             alt={item.name}
-                            className="w-16 h-16 object-cover rounded-md mr-4"
+                            className="w-20 h-20 object-cover rounded-md"
                           />
                           <div className="flex-1">
-                            <h3 className="text-md font-medium text-gray-800">
+                            <h3 className="text-lg font-medium text-gray-800">
                               {item.name}
                             </h3>
                             <p className="text-sm text-gray-600">
@@ -290,11 +306,11 @@ function Account() {
                           </div>
                         </div>
 
-                        <div className="flex items-center space-x-3">
-                          <button className="bg-black text-white px-4 py-2 text-sm rounded-md hover:bg-neutral-900 transition-colors">
+                        <div className="flex items-center space-x-4">
+                          <button className="bg-black text-white px-5 py-2 rounded-md hover:bg-neutral-900 transition-colors duration-200 ease-in-out">
                             Add to Cart
                           </button>
-                          <button className="text-black hover:text-red-600 p-2">
+                          <button className="text-black hover:text-red-600 p-2 transition-colors duration-200 ease-in-out">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="h-5 w-5"
@@ -312,11 +328,11 @@ function Account() {
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-8">
-                      <p className="text-gray-600 text-sm mb-2">
+                    <div className="text-center py-12">
+                      <p className="text-gray-600 text-sm mb-4">
                         Your wishlist is empty!
                       </p>
-                      <button className="text-blue-500 hover:text-blue-600 text-sm">
+                      <button className="text-blue-500 hover:text-blue-600 text-sm font-semibold">
                         Continue Shopping
                       </button>
                     </div>
@@ -332,45 +348,6 @@ function Account() {
                 Account Settings
               </h2>
 
-              {/* <div className="mb-8 p-4 border border-gray-200 rounded-md">
-                <h3 className="text-md font-medium text-gray-700 mb-3">
-                  Reset Password
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">
-                      Current Password
-                    </label>
-                    <input
-                      type="password"
-                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">
-                      New Password
-                    </label>
-                    <input
-                      type="password"
-                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">
-                      Confirm New Password
-                    </label>
-                    <input
-                      type="password"
-                      className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
-                    Update Password
-                  </button>
-                </div>
-              </div> */}
-
-              {/* Delete Account Section */}
               <div className="p-4 border border-red-200 rounded-md bg-red-50">
                 <h3 className="text-md font-medium text-gray-700 mb-2">
                   Delete Account
