@@ -1,8 +1,6 @@
 import { useState } from "react";
-import mainpageboy from "../assets/mainpage.jpg";
 import { FaCartPlus, FaRegHeart } from "react-icons/fa";
-import NewsLetter from "../components/NewsLetter";
-function Home() {
+function ProductPanel() {
   const Products = [
     {
       id: 2,
@@ -161,73 +159,7 @@ function Home() {
     ? Products.filter((product) => product.category === category)
     : Products;
   return (
-    <div className="w-full">
-      {/* Main Banner Section */}
-      <div className="flex justify-between items-center w-full p-4">
-        {/* Text Section */}
-        <div className="main w-full sm:w-1/2 lg:w-1/2 p-4">
-          <h3 className="text-4xl font-semibold mb-2">
-            Men Full Sleeve Solid Hooded Sweatshirt
-          </h3>
-          <h3 className="text-2xl text-gray-600 mb-2">We Perfect</h3>
-          <h3 className="font-light text-lg mb-4">Hoodie for Winters</h3>
-          <h3 className="text-5xl text-black font-bold mb-4">$499</h3>
-          {/* You can add more content like a button here */}
-          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-neutral-900 transition-all">
-            Add to Cart
-          </button>
-        </div>
-
-        {/* Image Section */}
-        <div className="image-section w-full sm:w-1/2 lg:w-1/2">
-          <img
-            src={mainpageboy}
-            alt="Product"
-            className="w-full h-[500px] object-cover rounded-lg shadow-lg"
-          />
-        </div>
-      </div>
-
-      {/* Category Bar */}
-      <div className="flex flex-col justify-center my-5">
-        <h3 className="text-4xl text-center my-5 font-medium">
-          Choose From Different Category
-        </h3>
-        <div className="flex flex-row justify-center">
-          {Products.length > 0 ? (
-            <div className="flex flex-wrap gap-2">
-              <div
-                className={`bg-black text-white p-2 px-5 mx-1 rounded-3xl shadow-md hover:bg-neutral-900 ${
-                  category === "" ? "bg-neutral-900" : ""
-                }`}
-                onClick={() => setCategory("")}
-              >
-                <p className="text-center text-xl font-medium">All</p>
-              </div>
-
-              {Products.map((item, index) => (
-                <div
-                  key={index}
-                  className={`bg-black text-white p-2 px-5 mx-1 rounded-3xl shadow-md hover:bg-neutral-900 ${
-                    category === item.category ? "bg-neutral-900" : ""
-                  }`}
-                  onClick={() => setCategory(item.category)}
-                >
-                  <p className="text-center text-xl font-medium">
-                    {item.category}
-                  </p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="no">
-              <p>Sorry, no categories available</p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Product Cards Section */}
+    <div>
       <div className="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-9 ">
         {filteredProducts.map((product) => (
           <div
@@ -283,12 +215,8 @@ function Home() {
           </div>
         ))}
       </div>
-
-      {/* product collage */}
-
-      <NewsLetter />
     </div>
   );
 }
 
-export default Home;
+export default ProductPanel;
