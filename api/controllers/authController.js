@@ -2,6 +2,8 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import "dotenv/config";
+
+//register
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
@@ -37,6 +39,7 @@ export const register = async (req, res) => {
   }
 };
 
+//login
 export const login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -71,6 +74,7 @@ export const login = async (req, res) => {
   }
 };
 
+//logout
 export const logout = async (req, res) => {
   try {
     res.clearCookie("token", {
@@ -83,4 +87,3 @@ export const logout = async (req, res) => {
     console.log(error);
   }
 };
-

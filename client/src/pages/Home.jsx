@@ -163,7 +163,7 @@ function Home() {
   return (
     <div className="w-full">
       {/* Main Banner Section */}
-      <div className="flex justify-between items-center w-full p-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center w-full p-4">
         {/* Text Section */}
         <div className="main w-full sm:w-1/2 lg:w-1/2 p-4">
           <h3 className="text-4xl font-semibold mb-2">

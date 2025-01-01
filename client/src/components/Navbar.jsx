@@ -4,10 +4,13 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import { ImCross } from "react-icons/im";
 import logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
+import { BiMenuAltRight } from "react-icons/bi";
+import { MdKeyboardBackspace } from "react-icons/md";
+
 // import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [searchText, setSearchText] = useState("");
+  const [Visible, setVisible] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for controlling dropdown visibility
 
   // const navigate = useNavigate();
@@ -16,14 +19,6 @@ function Navbar() {
   //   navigate("/account");
   //   setSection("cart");
   // };
-
-  const handleInputChange = (e) => {
-    setSearchText(e.target.value);
-  };
-
-  const handleClear = () => {
-    setSearchText("");
-  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prevState) => !prevState); // Toggle dropdown visibility
@@ -43,30 +38,17 @@ function Navbar() {
         </Link>
       </div>
 
-      <div className="flex flex-row items-center">
-        <div className="relative flex items-center">
-          <input
-            type="text"
-            className="border border-black rounded-md px-4 py-2 pr-10"
-            placeholder="Search..."
-            value={searchText}
-            onChange={handleInputChange}
-          />
-          {searchText ? (
-            <ImCross
-              className="absolute right-3 text-sm text-gray-500 cursor-pointer"
-              onClick={handleClear}
-            />
-          ) : (
-            <FaSearch className="absolute right-3 text-xl text-gray-500 cursor-pointer" />
-          )}
-        </div>
+      <div className="hidden sm:flex flex-row list-none gap-3 ">
+        <li className="text-xl">Home</li>
+        <li className="text-xl">Collection</li>
+        <li className="text-xl">About</li>
+        <li className="text-xl">Contact</li>
       </div>
 
       <div className="right">
         <ul className="flex flex-row gap-4">
           <li>
-            <FaHeart className="text-xl self-center" />
+            <FaSearch className="text-xl self-center" />
           </li>
           <li>
             <FaShoppingCart className="text-xl self-center" />
@@ -96,7 +78,35 @@ function Navbar() {
               </div>
             )}
           </li>
+          <li>
+            <BiMenuAltRight
+              className="text-2xl self-center sm:hidden"
+              onClick={() => setVisible(true)}
+            />
+          </li>
         </ul>
+      </div>
+
+      <div
+        className={`absolute top-0 overflow-hidden bg-white transition-all h-full right-0 ${
+          Visible ? "w-full" : "w-0"
+        } `}
+      >
+        <div className="list items">
+          <div
+            className="flex flex-row gap-2 text-xl items-center"
+            onClick={() => setVisible(false)}
+          >
+            <MdKeyboardBackspace />
+            <p>Back</p>
+          </div>
+          <div className="li my-4">
+            <li className="list-none p-3 border-black border ">Home</li>
+            <li className="list-none p-3 border-black border">Collection</li>
+            <li className="list-none p-3 border-black border">About</li>
+            <li className="list-none p-3 border-black border"> Contact</li>
+          </div>
+        </div>
       </div>
     </div>
   );
