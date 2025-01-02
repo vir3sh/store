@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { ImCross } from "react-icons/im";
@@ -6,10 +6,13 @@ import logo from "../assets/logo.jpg";
 import { Link } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { ShopContext } from "../context/ShopContext";
 
 // import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const products = useContext(ShopContext);
+  console.log(products);
   const [Visible, setVisible] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for controlling dropdown visibility
 
@@ -34,19 +37,27 @@ function Navbar() {
       <div className="left">
         <Link to="/">
           {/* <img src={logo} className="h-14" alt="" /> */}
-          <h1 className="text-5xl ">LOGO</h1>
+          <h1 className="text-4xl ">LOGO</h1>
         </Link>
       </div>
 
       <div className="hidden sm:flex flex-row list-none gap-3 ">
-        <li className="text-xl">Home</li>
-        <li className="text-xl">Collection</li>
-        <li className="text-xl">About</li>
-        <li className="text-xl">Contact</li>
+        <Link className=" text-xl" to={"/"}>
+          Home
+        </Link>
+        <Link className=" text-xl" to={"/collection"}>
+          Collection
+        </Link>
+        <Link className=" text-xl" to={"/about"}>
+          About
+        </Link>
+        <Link className=" text-xl" to={"/contact"}>
+          Contact
+        </Link>
       </div>
 
       <div className="right">
-        <ul className="flex flex-row gap-4">
+        <ul className="flex flex-row gap-4 items-center">
           <li>
             <FaSearch className="text-xl self-center" />
           </li>
@@ -100,11 +111,36 @@ function Navbar() {
             <MdKeyboardBackspace />
             <p>Back</p>
           </div>
-          <div className="li my-4">
-            <li className="list-none p-3 border-black border ">Home</li>
-            <li className="list-none p-3 border-black border">Collection</li>
-            <li className="list-none p-3 border-black border">About</li>
-            <li className="list-none p-3 border-black border"> Contact</li>
+          <div className="li my-4 flex  flex-col">
+            <Link
+              to={"/"}
+              onClick={() => setVisible(false)}
+              className="list-none p-3 border-black border "
+            >
+              Home
+            </Link>
+            <Link
+              to={"/collection"}
+              onClick={() => setVisible(false)}
+              className="list-none p-3 border-black border"
+            >
+              Collection
+            </Link>
+            <Link
+              to={"/about"}
+              onClick={() => setVisible(false)}
+              className="list-none p-3 border-black border"
+            >
+              About
+            </Link>
+            <Link
+              to={"/contact"}
+              onClick={() => setVisible(false)}
+              className="list-none p-3 border-black border"
+            >
+              {" "}
+              Contact
+            </Link>
           </div>
         </div>
       </div>

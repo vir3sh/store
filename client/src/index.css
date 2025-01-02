@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- *{
-    font-family: 'poppins';
- }
+* {
+  font-family: "poppins";
+}
+
+.timesroman {
+  font-family: "Times New Roman", Times, serif;
+}
+
