@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-white text-white py-6">
+    <footer className=" text-white py-6">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <p className="text-sm mb-4">
           {/* &copy; 2024 Your Company. All rights reserved. */}

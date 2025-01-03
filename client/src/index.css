@@ -3,9 +3,9 @@
 @tailwind utilities;
 * {
   font-family: "poppins";
+  background-color: rgb(226 229 238);
 }
 
 .timesroman {
   font-family: "Times New Roman", Times, serif;
 }
-

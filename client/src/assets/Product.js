@@ -27,7 +27,7 @@ export const products = [
     description:
       "This Bluetooth keyboard offers wireless connectivity with an ergonomic design, perfect for both work and leisure use.",
     brand: "Logitech", // Product brand
-    category: "Electronics", // Product category
+    category: "Keyboard", // Product category
     subCategory: "Computer Accessories", // Product subcategory
   },
   {
@@ -179,7 +179,7 @@ export const products = [
     description:
       "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
     brand: "Anker", // Product brand
-    category: "Electronics", // Product category
+    category: "Mobile", // Product category
     subCategory: "Mobile Accessories", // Product subcategory
   },
 ];

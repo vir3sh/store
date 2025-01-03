@@ -14,9 +14,9 @@ function LatestCollection() {
   }, [products]);
 
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto px-4">
       <Title text1={"Latest"} text2={"Collection"} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 gap-y-6 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {latestProducts.map((item) => (
           <SingleProduct
             key={item.id}
@@ -24,6 +24,7 @@ function LatestCollection() {
             image={item.image}
             title={item.title}
             price={item.price}
+            rating={item.rating}
           />
         ))}
       </div>

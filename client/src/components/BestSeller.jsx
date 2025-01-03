@@ -12,7 +12,7 @@ function BestSeller() {
 
   console.log(BestSeller);
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto px-5">
       <Title text1={"BestSeller"} text2={"Products"} />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 gap-y-6 ">
@@ -23,6 +23,7 @@ function BestSeller() {
             image={item.image}
             title={item.title}
             price={item.price}
+            rating={item.rating}
           />
         ))}
       </div>
