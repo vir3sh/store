@@ -57,9 +57,9 @@ const Collection = () => {
 
       <div className="flex flex-col lg:flex-row w-full items-start gap-8 p-6">
         {/* Filter Section */}
-        <div className="w-full lg:w-1/5 border border-black rounded shadow-lg p-6">
+        <div className="w-full lg:w-1/5  rounded  ">
           <p
-            className="text-2xl font-semibold mb-4 sm:block cursor-pointer"
+            className="text-2xl font-semibold mb-4 sm:block   cursor-pointer"
             onClick={() => setVisible(!visible)}
           >
             Filters
@@ -67,7 +67,7 @@ const Collection = () => {
           <div
             className={`${
               visible ? "block" : "hidden"
-            } sm:block transition-all duration-300 ease-in-out`}
+            } sm:block transition-all duration-300 border p-5 rounded border-black ease-in-out`}
           >
             <div className="space-y-2">
               {[
@@ -97,7 +97,7 @@ const Collection = () => {
 
         {/* Products Section */}
         <div className="w-full lg:w-4/5">
-          <div className="flex flex-row justify-between mb-4">
+          <div className="flex flex-col sm:flex-row justify-between mb-4">
             <h2 className="text-2xl font-semibold">Choose from the best</h2>
             <select
               className="border border-black rounded px-3 py-2 text-sm"

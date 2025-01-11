@@ -1,7 +1,7 @@
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
 import "dotenv/config";
 import productModel from "../models/Product.js";
+
+//For Adding Product
 export const addProduct = async (req, res) => {
   try {
     const {
@@ -47,5 +47,40 @@ export const addProduct = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+//for listing product
+export const listProduct = async (req, res) => {
+  try {
+    const product = await productModel.find({});
+    res.json({ success: true, product });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "no product found" });
+  }
+};
+
+//single product
+export const singleProduct = async (req, res) => {
+  try {
+    const { productId } = req.body;
+    const product = await productModel.findById(productId);
+    res.json({ success: true, product });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "failed to load single product" });
+  }
+};
+
+//delete product
+export const deleteProduct = async (req, res) => {
+  try {
+    const { productId } = req.body;
+    await productModel.findByIdAndDelete(productId);
+    return res.json({ success: true, message: "Product deleted" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "error while deleting product" });
   }
 };

@@ -2,8 +2,10 @@ import express from "express";
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import myDB from "./config/myDB.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
+app.use(cookieParser());
 
 myDB();
 app.get("/", (req, res) => {

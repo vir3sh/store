@@ -20,16 +20,16 @@ function SingleProduct({ id, title, price, image, rating }) {
 
   return (
     <Link to={`/product/${id}`}>
-      <div className="product-card group overflow-hidden bg-white shadow-lg rounded-lg transform transition hover:scale-105">
+      <div className="product-card group overflow-hidden border border-[#c5b9b9] bg-white shadow-lg rounded-md transform transition hover:scale-105">
         <div className="product-image">
           <img
-            className="w-full h-[300px] object-cover rounded-t-lg"
+            className="w-full h-[300px] object-fill rounded"
             src={image}
             alt={title}
           />
         </div>
         <div className="product-details p-4 flex flex-col justify-between bg-white">
-          <p className="product-title text-[16px] font-semibold text-gray-800 bg-white group-hover:text-yellow-500 transition">
+          <p className="product-title text-[16px] font-semibold text-gray-800 bg-white group-hover:text-neutral-700 transition">
             {title}
           </p>
           <p className="product-price text-[14px] text-gray-600 bg-white">
