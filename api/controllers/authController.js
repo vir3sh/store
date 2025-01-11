@@ -87,3 +87,24 @@ export const logout = async (req, res) => {
     console.log(error);
   }
 };
+
+export const adminlogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Put all fields" });
+    }
+    if (
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const token = jwt.sign(email + password, process.env.JWT_SECRET);
+      res.json({ success: true, token });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({ success: false, message: "invalid credentials" });
+  }
+};
