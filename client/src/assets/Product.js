@@ -1,11 +1,13 @@
 export const products = [
   {
     id: 1,
-    title: "Bluetooth Keyboard",
+    title: "hh Keyboard",
     price: 2500,
     quantity: 2,
-    image:
+    image: [
       "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
+      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832s",
+    ],
     rating: 4.5, // Rating out of 5
     sizes: ["Small", "Medium", "Large"], // Available sizes
     bestseller: true,
@@ -17,9 +19,9 @@ export const products = [
         date: "2024-12-01",
       },
       {
-        username: "Sarah89",
+        username: "Sarah",
         review:
-          "Good value for money, but the keys could be a bit more responsive.",
+          "Good value for money, but the keys could be a bit more responsive. haha test ",
         rating: 4,
         date: "2024-12-05",
       },
@@ -32,8 +34,8 @@ export const products = [
   },
   {
     id: 2,
-    title: "Bluetooth Keyboard",
-    price: 2500,
+    title: "Wireless Keyboard",
+    price: 1000,
     quantity: 2,
     image:
       "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
@@ -84,6 +86,18 @@ export const products = [
         rating: 3,
         date: "2024-12-08",
       },
+      {
+        username: "AliceInWonder",
+        review: "Solid build but a bit bulky to carry around.",
+        rating: 3,
+        date: "2024-12-08",
+      },
+      {
+        username: "AliceInWonder",
+        review: "Solid build but a bit bulky to carry around.",
+        rating: 3,
+        date: "2024-12-08",
+      },
     ], // User reviews
     description:
       "A sturdy laptop stand with adjustable height, helping you achieve the perfect viewing angle for your work or study sessions.",
@@ -93,7 +107,7 @@ export const products = [
   },
   {
     id: 4,
-    title: "Wireless Mouse",
+    title: " Mouse",
     price: 1200,
     quantity: 3,
     image:
@@ -123,7 +137,7 @@ export const products = [
   },
   {
     id: 5,
-    title: "Wireless Headphones",
+    title: "Wireless Mouse",
     price: 5000,
     quantity: 5,
     image:
@@ -179,7 +193,67 @@ export const products = [
     description:
       "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
     brand: "Anker", // Product brand
-    category: "Mobile", // Product category
+    category: "example", // Product category
+    subCategory: "Mobile Accessories", // Product subcategory
+  },
+  {
+    id: 7,
+    title: "Smartphone test2",
+    price: 500,
+    quantity: 10,
+    image:
+      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
+    rating: 4.0, // Rating out of 5
+    sizes: ["One Size"], // Available sizes
+    bestseller: false,
+    userReviews: [
+      {
+        username: "TechSavvy123",
+        review: "Charges my phone fast, but the cable could be longer.",
+        rating: 3,
+        date: "2024-12-15",
+      },
+      {
+        username: "AlexTheGadgeteer",
+        review: "Works as expected. Good value for the price.",
+        rating: 4,
+        date: "2024-12-16",
+      },
+    ], // User reviews
+    description:
+      "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
+    brand: "Anker", // Product brand
+    category: "example", // Product category
+    subCategory: "Mobile Accessories", // Product subcategory
+  },
+  {
+    id: 8,
+    title: "Smartphone test3",
+    price: 500,
+    quantity: 10,
+    image:
+      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
+    rating: 4.0, // Rating out of 5
+    sizes: ["One Size"], // Available sizes
+    bestseller: false,
+    userReviews: [
+      {
+        username: "TechSavvy123",
+        review: "Charges my phone fast, but the cable could be longer.",
+        rating: 3,
+        date: "2024-12-15",
+      },
+      {
+        username: "AlexTheGadgeteer",
+        review: "Works as expected. Good value for the price.",
+        rating: 4,
+        date: "2024-12-16",
+      },
+    ], // User reviews
+    description:
+      "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
+    brand: "Anker", // Product brand
+    category: "example", // Product category
     subCategory: "Mobile Accessories", // Product subcategory
   },
 ];

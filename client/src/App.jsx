@@ -6,17 +6,21 @@ import Footer from "./components/Footer";
 import Collection from "./pages/Collection";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import SingleProduct from "./pages/SingleProduct";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Account />} path="/account" />
         <Route element={<Collection />} path="/collection" />
         <Route element={<Contact />} path="/contact" />
         <Route element={<About />} path="/about" />
+        <Route element={<SingleProduct />} path="/product/:productId" />
       </Routes>
       <Footer />
     </>

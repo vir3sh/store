@@ -10,7 +10,6 @@ function BestSeller() {
     setBestSeller(bestProducts.slice(0, 5));
   }, []);
 
-  console.log(BestSeller);
   return (
     <div className="max-w-screen-xl mx-auto px-5">
       <Title text1={"BestSeller"} text2={"Products"} />

@@ -12,7 +12,6 @@ import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
   const products = useContext(ShopContext);
-  console.log(products);
   const [Visible, setVisible] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for controlling dropdown visibility
 

@@ -24,7 +24,7 @@ function SingleProduct({ id, title, price, image, rating }) {
         <div className="product-image">
           <img
             className="w-full h-[300px] object-fill rounded"
-            src={image}
+            src={Array.isArray(image) ? image[0] : image}
             alt={title}
           />
         </div>
