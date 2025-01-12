@@ -1,11 +1,13 @@
 import React from "react";
-import { Button } from "./components/ui/button";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
-    <div>
-      <Button>Click here </Button>
-    </div>
+    <>
+      <Navbar />
+      <Sidebar />
+    </>
   );
 };
 
