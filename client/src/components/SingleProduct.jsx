@@ -8,16 +8,16 @@ const SingleProduct = ({ title, price, id, image, category }) => {
     <Link to={`/product/${id}`}>
       <div className="bg-slate-100 p-5 rounded-md  overflow-auto">
         <img
-          className=" rounded-lg h-[200px] w-[210px] border "
+          className="rounded-lg h-[200px] w-[210px] border "
           src={image}
           alt={title}
         />
         <p className="text-xl font-medium  ">{title}</p>
         <p className="text-xs font-medium">{category}</p>
-        <p className="text-2xl font-normal">
+        <p className="text-xl font-semibold">
           {currency} {price}
         </p>
-        <button className="p-2 rounded-xl bg-black text-white">
+        <button className="p-2 rounded-md bg-black text-white">
           Add to cart
         </button>
       </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import mainimage from "../assets/mainpage.jpg";
 const Hero = () => {
   return (

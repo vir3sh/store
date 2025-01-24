@@ -4,16 +4,16 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="bg-black p-4 text-[18px] ">
-      <div className="flex justify-between    text-white ">
+    <div className="bg-black p-4 text-[18px] w-[1250px] items-center mx-auto rounded-xl my-2 ">
+      <div className="flex justify-between text-white ">
         <div className="left">Logo</div>
         <div className="right hidden sm:block ">
           <ul className="flex gap-4">
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/home"}>HOME</Link>
 
-            <Link to={"/collection"}>collection</Link>
-            <Link to={"/about"}>about us</Link>
-            <Link to={"/contact"}>contact</Link>
+            <Link to={"/collection"}>COLLECTION</Link>
+            <Link to={"/about"}>ABOUT</Link>
+            <Link to={"/contact"}>CONTACT</Link>
           </ul>
         </div>
 
@@ -32,28 +32,28 @@ const Navbar = () => {
               className="p-2 border-b border-white"
               onClick={() => setVisible(false)}
             >
-              Home
+              HOME
             </Link>
             <Link
               to={"/collection"}
               className="p-2 border-b border-white"
               onClick={() => setVisible(false)}
             >
-              collection
+              COLLECTION
             </Link>
             <Link
               to={"/about"}
               className="p-2 border-b border-white"
               onClick={() => setVisible(false)}
             >
-              about us
+              ABOUT
             </Link>
             <Link
               to={"/contact"}
               className="p-2 border-b border-white"
               onClick={() => setVisible(false)}
             >
-              contact
+              CONTACT
             </Link>
           </ul>
         </div>
