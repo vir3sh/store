@@ -1,11 +1,7 @@
-import Title from "../components/Title";
+import React from "react";
 
-function About() {
-  return (
-    <div>
-      <Title text1={"About"} />
-    </div>
-  );
-}
+const About = () => {
+  return <div>About</div>;
+};
 
 export default About;

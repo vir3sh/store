@@ -96,32 +96,33 @@ export const adminlogin = async (req, res) => {
         .status(400)
         .json({ success: false, message: "Put all fields" });
     }
+
     if (
       email === process.env.ADMIN_EMAIL &&
       password === process.env.ADMIN_PASSWORD
     ) {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-        expiresIn: "7d",
+        expiresIn: "20d",
       });
+      // res.json({ success: true, token });
+      // console.log("generated token is ", token);
       res.cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        maxAge: 20 * 24 * 60 * 60 * 1000, // 20 days
       });
+      return res.json({ success: true, message: "login successful" });
 
       // Send response
-      return res.status(201).json({
-        success: true,
-        message: "login successfully",
+    } else {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid credentials",
       });
     }
 
     //for invalid credentials
-    return res.status(401).json({
-      success: false,
-      message: "Invalid credentials",
-    });
   } catch (error) {
     console.log(error);
     return res.json({ success: false, message: "invalid credentials" });

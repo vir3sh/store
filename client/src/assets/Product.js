@@ -256,4 +256,35 @@ export const products = [
     category: "example", // Product category
     subCategory: "Mobile Accessories", // Product subcategory
   },
+  {
+    id: 9,
+    title: "Wireless Keyboard",
+    price: 1000,
+    quantity: 2,
+    image:
+      "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
+    rating: 4.5, // Rating out of 5
+    sizes: ["Small", "Medium", "Large"], // Available sizes
+    bestseller: false,
+    userReviews: [
+      {
+        username: "JohnDoe123",
+        review: "Great keyboard! The Bluetooth connection is seamless.",
+        rating: 5,
+        date: "2024-12-01",
+      },
+      {
+        username: "Sarah89",
+        review:
+          "Good value for money, but the keys could be a bit more responsive.",
+        rating: 4,
+        date: "2024-12-05",
+      },
+    ], // User reviews
+    description:
+      "This Bluetooth keyboard offers wireless connectivity with an ergonomic design, perfect for both work and leisure use.",
+    brand: "Logitech", // Product brand
+    category: "Electronics", // Product category
+    subCategory: "Computer Accessories", // Product subcategory
+  },
 ];

@@ -1,34 +1,31 @@
-import mainpageboy from "../assets/mainpage.jpg";
-import { FaCartPlus, FaRegHeart } from "react-icons/fa";
-function Hero() {
+import React from "react";
+import mainimage from "../assets/mainpage.jpg";
+const Hero = () => {
   return (
     <div>
-      <div className="flex flex-col sm:flex-row justify-between items-center w-full p-4">
-        {/* Text Section */}
-        <div className="main w-full sm:w-1/2 lg:w-1/2 p-4">
-          <h3 className="text-4xl font-semibold mb-2">
-            Men Full Sleeve Solid Hooded Sweatshirt
-          </h3>
-          <h3 className="text-2xl text-gray-600 mb-2">We Perfect</h3>
-          <h3 className="font-light text-lg mb-4">Hoodie for Winters</h3>
-          <h3 className="text-5xl text-black font-bold mb-4">$499</h3>
-          {/* You can add more content like a button here */}
-          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-neutral-900 transition-all">
-            Add to Cart
+      <div className="flex justify-around my-6 flex-col-reverse sm:flex-row  p-4 ">
+        <div className="self-center  ">
+          <p className="text-5xl font-semibold pt-3">Realme 6</p>
+          <p className="text-xl font-medium pt-3">
+            {" "}
+            Mobile for day to day actvity <br />
+            at resonable price
+          </p>
+          <p className="text-3xl font-bold pt-3">$120</p>
+          <button className="rounded-2xl px-5  py-3 bg-black text-white">
+            Check{" "}
           </button>
         </div>
-
-        {/* Image Section */}
-        <div className="image-section w-full sm:w-1/2 lg:w-1/2">
+        <div className="self-center">
           <img
-            src={mainpageboy}
-            alt="Product"
-            className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+            src={mainimage}
+            alt="main page image"
+            className="rounded-2xl  w-[700px]"
           />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Hero;
