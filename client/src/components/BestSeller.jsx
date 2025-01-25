@@ -11,7 +11,7 @@ const BestSeller = () => {
     setBestproduct(products.filter((item) => item.bestseller));
   }, []);
   return (
-    <div className="mx-auto w-[1250px] my-6">
+    <div className="mx-auto max-w-[1250px] my-6">
       <Title text1={"BestSeller"} text2={"Products"} />
       <div className="grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {bestproduct.map((item, index) => (

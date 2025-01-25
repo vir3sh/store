@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Collection from "./pages/Collection";
+import Product from "./pages/Product";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route element={<About />} path="/about" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<Collection />} path="/collection" />
+          <Route element={<Product />} path="/product/${id}" />
         </Routes>
         <Footer />
       </div>

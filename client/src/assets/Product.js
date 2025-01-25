@@ -1,290 +1,303 @@
 export const products = [
   {
-    id: 1,
-    title: "hh Keyboard",
-    price: 2500,
-    quantity: 2,
-    image: [
-      "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832s",
-    ],
-    rating: 4.5, // Rating out of 5
-    sizes: ["Small", "Medium", "Large"], // Available sizes
+    id: 2,
+    title: "Samsung Galaxy S21",
+    price: 69999,
+    quantity: 5,
+    image: "https://m.media-amazon.com/images/I/81vqHyDCSCL._AC_UY218_.jpg",
+    rating: 4.7,
+    sizes: ["128GB", "256GB"],
     bestseller: true,
     userReviews: [
       {
-        username: "JohnDoe123",
-        review: "Great keyboard! The Bluetooth connection is seamless.",
-        rating: 5,
-        date: "2024-12-01",
-      },
-      {
-        username: "Sarah",
+        username: "TechGuru",
         review:
-          "Good value for money, but the keys could be a bit more responsive. haha test ",
+          "Amazing display and performance. Battery life could be better.",
         rating: 4,
-        date: "2024-12-05",
+        date: "2024-11-15",
       },
-    ], // User reviews
-    description:
-      "This Bluetooth keyboard offers wireless connectivity with an ergonomic design, perfect for both work and leisure use.",
-    brand: "Logitech", // Product brand
-    category: "Keyboard", // Product category
-    subCategory: "Computer Accessories", // Product subcategory
-  },
-  {
-    id: 2,
-    title: "Wireless Keyboard",
-    price: 1000,
-    quantity: 2,
-    image:
-      "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
-    rating: 4.5, // Rating out of 5
-    sizes: ["Small", "Medium", "Large"], // Available sizes
-    bestseller: false,
-    userReviews: [
       {
-        username: "JohnDoe123",
-        review: "Great keyboard! The Bluetooth connection is seamless.",
+        username: "MobileFanatic",
+        review: "Best Android phone I've used so far!",
         rating: 5,
-        date: "2024-12-01",
+        date: "2024-12-20",
       },
-      {
-        username: "Sarah89",
-        review:
-          "Good value for money, but the keys could be a bit more responsive.",
-        rating: 4,
-        date: "2024-12-05",
-      },
-    ], // User reviews
+    ],
     description:
-      "This Bluetooth keyboard offers wireless connectivity with an ergonomic design, perfect for both work and leisure use.",
-    brand: "Logitech", // Product brand
-    category: "Electronics", // Product category
-    subCategory: "Computer Accessories", // Product subcategory
+      "The Samsung Galaxy S21 offers a dynamic AMOLED display, powerful Exynos 2100 processor, and a versatile triple-camera setup.",
+    brand: "Samsung",
+    category: "Mobile",
+    subCategory: "Smartphones",
   },
   {
     id: 3,
-    title: "Laptop Stand",
-    price: 1500,
-    quantity: 1,
+    title: "Apple iPhone 13",
+    price: 79999,
+    quantity: 3,
     image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.2, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sXxJy3VgIY8HC7lWCdTblL218dEh4MIOYw&s",
+    rating: 4.8,
+    sizes: ["128GB", "256GB", "512GB"],
     bestseller: true,
     userReviews: [
       {
-        username: "Mike91",
-        review: "Perfect for elevating my laptop. It has improved my posture!",
+        username: "AppleLover",
+        review: "Smooth performance and excellent camera quality.",
         rating: 5,
-        date: "2024-12-10",
+        date: "2024-10-05",
       },
       {
-        username: "AliceInWonder",
-        review: "Solid build but a bit bulky to carry around.",
-        rating: 3,
-        date: "2024-12-08",
+        username: "BudgetBuyer",
+        review: "A bit pricey, but worth every penny.",
+        rating: 4,
+        date: "2024-11-22",
       },
-      {
-        username: "AliceInWonder",
-        review: "Solid build but a bit bulky to carry around.",
-        rating: 3,
-        date: "2024-12-08",
-      },
-      {
-        username: "AliceInWonder",
-        review: "Solid build but a bit bulky to carry around.",
-        rating: 3,
-        date: "2024-12-08",
-      },
-    ], // User reviews
+    ],
     description:
-      "A sturdy laptop stand with adjustable height, helping you achieve the perfect viewing angle for your work or study sessions.",
-    brand: "Xtreme", // Product brand
-    category: "example", // Product category
-    subCategory: "Laptop Accessories", // Product subcategory
+      "The iPhone 13 features a Super Retina XDR display, A15 Bionic chip, and an improved dual-camera system for stunning photos and videos.",
+    brand: "Apple",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
   },
   {
     id: 4,
-    title: " Mouse",
-    price: 1200,
-    quantity: 3,
-    image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.8, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
+    title: "OnePlus 9 Pro",
+    price: 64999,
+    quantity: 4,
+    image: "https://m.media-amazon.com/images/I/61H5BvUlNeS.jpg",
+    rating: 4.6,
+    sizes: ["128GB", "256GB"],
     bestseller: false,
     userReviews: [
       {
-        username: "GamerX",
-        review: "Amazing precision for gaming. Highly recommended!",
-        rating: 5,
-        date: "2024-12-02",
+        username: "GadgetGeek",
+        review:
+          "Fast charging and fluid display. Camera could use some improvements.",
+        rating: 4,
+        date: "2024-09-30",
       },
       {
-        username: "Techie_101",
-        review: "Works well for everyday use. Comfortable design.",
-        rating: 4,
-        date: "2024-12-03",
+        username: "Speedster",
+        review: "Blazing fast performance with a sleek design.",
+        rating: 5,
+        date: "2024-12-10",
       },
-    ], // User reviews
+    ],
     description:
-      "A high-performance wireless mouse with ergonomic design, perfect for both professional and gaming use.",
-    brand: "Razer", // Product brand
-    category: "cloth", // Product category
-    subCategory: "Computer Accessories", // Product subcategory
+      "The OnePlus 9 Pro comes with a Fluid AMOLED display, Snapdragon 888 processor, and a Hasselblad-tuned quad-camera system.",
+    brand: "OnePlus",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
   },
   {
     id: 5,
-    title: "Wireless Mouse",
-    price: 5000,
-    quantity: 5,
+    title: "Google Pixel 6",
+    price: 59999,
+    quantity: 6,
     image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.3, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
+      "https://i5.walmartimages.com/seo/Google-Pixel-6-128GB-GB7N6-Factory-Unlocked-8GB-RAM-Smartphone-Sorta-Seafoam_04252aa4-00b0-4844-b803-3eaeb0fc7fc3.be79d2ebfaa3a0278b612c0bb2de2056.jpeg",
+    rating: 4.5,
+    sizes: ["128GB", "256GB"],
     bestseller: false,
     userReviews: [
       {
-        username: "AudioLover",
-        review:
-          "Great sound quality, but a bit heavy after long listening sessions.",
-        rating: 4,
-        date: "2024-12-12",
+        username: "PhotoEnthusiast",
+        review: "Outstanding camera performance, especially in low light.",
+        rating: 5,
+        date: "2024-11-01",
       },
       {
-        username: "MusicFan88",
-        review: "The bass is amazing! Excellent headphones for the price.",
-        rating: 5,
-        date: "2024-12-14",
+        username: "AndroidFan",
+        review: "Pure Android experience with timely updates.",
+        rating: 4,
+        date: "2024-12-15",
       },
-    ], // User reviews
+    ],
     description:
-      "These wireless headphones offer superior sound quality and noise-cancellation for an immersive listening experience.",
-    brand: "Sony", // Product brand
-    category: "Electronics", // Product category
-    subCategory: "Audio", // Product subcategory
+      "The Google Pixel 6 offers a clean Android experience, Google's custom Tensor chip, and an advanced camera system with computational photography.",
+    brand: "Google",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
   },
   {
     id: 6,
-    title: "Smartphone Charger",
-    price: 500,
-    quantity: 10,
+    title: "Xiaomi Mi 11 Ultra",
+    price: 69999,
+    quantity: 2,
     image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.0, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
-    bestseller: false,
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHRLiUfpDhBeNtkrZPj7-dWbLrxoJp3-4dxA&s",
+    rating: 4.7,
+    sizes: ["256GB", "512GB"],
+    bestseller: true,
     userReviews: [
       {
-        username: "TechSavvy123",
-        review: "Charges my phone fast, but the cable could be longer.",
-        rating: 3,
-        date: "2024-12-15",
+        username: "ValueSeeker",
+        review: "Premium features at a competitive price.",
+        rating: 5,
+        date: "2024-10-20",
       },
       {
-        username: "AlexTheGadgeteer",
-        review: "Works as expected. Good value for the price.",
+        username: "TechSavvy",
+        review: "Impressive battery life and display quality.",
         rating: 4,
-        date: "2024-12-16",
+        date: "2024-11-25",
       },
-    ], // User reviews
+    ],
     description:
-      "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
-    brand: "Anker", // Product brand
-    category: "example", // Product category
-    subCategory: "Mobile Accessories", // Product subcategory
+      "The Xiaomi Mi 11 Ultra boasts a 120Hz AMOLED display, Snapdragon 888 processor, and a versatile triple-camera setup with a large sensor.",
+    brand: "Xiaomi",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
   },
-  {
-    id: 7,
-    title: "Smartphone test2",
-    price: 500,
-    quantity: 10,
-    image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.0, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
-    bestseller: false,
-    userReviews: [
-      {
-        username: "TechSavvy123",
-        review: "Charges my phone fast, but the cable could be longer.",
-        rating: 3,
-        date: "2024-12-15",
-      },
-      {
-        username: "AlexTheGadgeteer",
-        review: "Works as expected. Good value for the price.",
-        rating: 4,
-        date: "2024-12-16",
-      },
-    ], // User reviews
-    description:
-      "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
-    brand: "Anker", // Product brand
-    category: "example", // Product category
-    subCategory: "Mobile Accessories", // Product subcategory
-  },
+
   {
     id: 8,
-    title: "Smartphone test3",
-    price: 500,
-    quantity: 10,
+    title: "Realme GT Neo 3",
+    price: 36999,
+    quantity: 4,
     image:
-      "https://alogic.in/cdn/shop/products/media-40523_1_grande.jpg?v=1688017832",
-    rating: 4.0, // Rating out of 5
-    sizes: ["One Size"], // Available sizes
-    bestseller: false,
+      "https://rukminim2.flixcart.com/image/850/1000/xif0q/mobile/2/9/c/-original-imaghzfgbgyafbgq.jpeg?q=90&crop=false",
+    rating: 4.4,
+    sizes: ["128GB", "256GB"],
+    bestseller: true,
     userReviews: [
       {
-        username: "TechSavvy123",
-        review: "Charges my phone fast, but the cable could be longer.",
-        rating: 3,
-        date: "2024-12-15",
+        username: "RealmeFan",
+        review: "Excellent performance and fast charging.",
+        rating: 5,
+        date: "2024-11-10",
       },
       {
-        username: "AlexTheGadgeteer",
-        review: "Works as expected. Good value for the price.",
+        username: "GadgetHunter",
+        review: "Decent camera but amazing speed.",
         rating: 4,
-        date: "2024-12-16",
+        date: "2024-12-18",
       },
-    ], // User reviews
+    ],
     description:
-      "A fast-charging smartphone charger compatible with most devices. Comes with a durable cable for long-term use.",
-    brand: "Anker", // Product brand
-    category: "example", // Product category
-    subCategory: "Mobile Accessories", // Product subcategory
+      "The Realme GT Neo 3 offers cutting-edge performance with MediaTek Dimensity 8100 chipset and 150W fast charging support.",
+    brand: "Realme",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
   },
   {
     id: 9,
-    title: "Wireless Keyboard",
-    price: 1000,
+    title: "Oppo Find X5 Pro",
+    price: 89999,
     quantity: 2,
     image:
-      "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008347417_437Wx649H_202012052125041.jpeg",
-    rating: 4.5, // Rating out of 5
-    sizes: ["Small", "Medium", "Large"], // Available sizes
+      "https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x5-pro/navigation/find-x5-pro-black-navigation.png",
+    rating: 4.6,
+    sizes: ["256GB", "512GB"],
     bestseller: false,
     userReviews: [
       {
-        username: "JohnDoe123",
-        review: "Great keyboard! The Bluetooth connection is seamless.",
+        username: "DesignLover",
+        review: "Sleek design and stunning display.",
         rating: 5,
-        date: "2024-12-01",
+        date: "2024-11-25",
       },
       {
-        username: "Sarah89",
-        review:
-          "Good value for money, but the keys could be a bit more responsive.",
+        username: "NightPhotographer",
+        review: "Great night photography capabilities.",
         rating: 4,
+        date: "2024-12-12",
+      },
+    ],
+    description:
+      "The Oppo Find X5 Pro features a premium ceramic build, Snapdragon 8 Gen 1, and a Hasselblad-tuned camera for incredible photography.",
+    brand: "Oppo",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
+  },
+  {
+    id: 10,
+    title: "Vivo X80 Pro",
+    price: 74999,
+    quantity: 5,
+    image:
+      "https://rukminim2.flixcart.com/image/850/1000/l3929ow0/mobile/k/g/q/-original-imageewzvy6d9cgb.jpeg?q=90&crop=false",
+    rating: 4.5,
+    sizes: ["128GB", "256GB"],
+    bestseller: false,
+    userReviews: [
+      {
+        username: "CameraFan",
+        review: "Superb camera performance and battery life.",
+        rating: 5,
         date: "2024-12-05",
       },
-    ], // User reviews
+      {
+        username: "PerformanceLover",
+        review: "Smooth user experience with good software optimization.",
+        rating: 4,
+        date: "2024-12-15",
+      },
+    ],
     description:
-      "This Bluetooth keyboard offers wireless connectivity with an ergonomic design, perfect for both work and leisure use.",
-    brand: "Logitech", // Product brand
-    category: "Electronics", // Product category
-    subCategory: "Computer Accessories", // Product subcategory
+      "The Vivo X80 Pro offers a ZEISS-tuned camera system, Snapdragon 8 Gen 1, and a vibrant AMOLED display for an excellent viewing experience.",
+    brand: "Vivo",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
+  },
+  {
+    id: 11,
+    title: "Motorola Edge 30 Ultra",
+    price: 59999,
+    quantity: 3,
+    image:
+      "https://www.jiomart.com/images/product/original/rvoouhhi0h/motorola-edge-50-fusion-5g-marshmallow-blue-8gb-ram-128gb-storage-product-images-orvoouhhi0h-p609067654-3-202405242018.png?im=Resize=(420,420)",
+    rating: 4.3,
+    sizes: ["128GB", "256GB"],
+    bestseller: false,
+    userReviews: [
+      {
+        username: "MotoFan",
+        review: "Flagship features at an affordable price.",
+        rating: 4,
+        date: "2024-10-30",
+      },
+      {
+        username: "DisplayExpert",
+        review: "Edge display is a game changer.",
+        rating: 5,
+        date: "2024-11-20",
+      },
+    ],
+    description:
+      "The Motorola Edge 30 Ultra boasts a 200MP camera, Snapdragon 8+ Gen 1, and a beautiful curved-edge display.",
+    brand: "Motorola",
+    category: "Mobile Phone",
+    subCategory: "Smartphones",
+  },
+  {
+    id: 12,
+    title: "Asus ROG Phone 6",
+    price: 79999,
+    quantity: 2,
+    image:
+      "https://images.jdmagicbox.com/quickquotes/images_main/rog-phone-6-ram-12-gb-storage-256-gb-storm-white-272357024-mnjro9z4.jpg",
+    rating: 4.7,
+    sizes: ["128GB", "256GB"],
+    bestseller: true,
+    userReviews: [
+      {
+        username: "GamingPro",
+        review: "Ultimate gaming experience with great cooling.",
+        rating: 5,
+        date: "2024-11-02",
+      },
+      {
+        username: "Techie",
+        review: "Superb battery life and customizable controls.",
+        rating: 4,
+        date: "2024-12-20",
+      },
+    ],
+    description:
+      "The Asus ROG Phone 6 is a gaming powerhouse with Snapdragon 8+ Gen 1, 165Hz AMOLED display, and customizable RGB lighting.",
+    brand: "Asus",
+    category: "Mobile Phone",
+    subCategory: "Gaming Smartphones",
   },
 ];
