@@ -1,51 +1,53 @@
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Add from "./pages/Add";
-import List from "./pages/List";
-import Order from "./pages/Order";
-import { useContext, useEffect, useState } from "react";
-import Login from "./pages/Login";
+import React, { useContext, useEffect } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { shopContext } from "./context/shopContext";
+import ListProducts from "./pages/ListProducts";
+import AddProduct from "./pages/AddProduct";
+import SingleProduct from "./pages/SingleProducts";
+import DeleteProduct from "./pages/DeleteProduct";
+import Login from "./pages/Login"; // Make sure you have a Login component
 
 const App = () => {
-  const { isloggedin, setIsloggedin, setToken } = useContext(shopContext);
-  const navigate = useNavigate();
+  const { isloggedin, token, setIsloggedin, setToken } =
+    useContext(shopContext);
 
+  // On initial load, check if a token is in localStorage
   useEffect(() => {
-    // Check localStorage for a token
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
       setToken(storedToken);
-      setIsloggedin(true); // Mark user as logged in
+      setIsloggedin(true);
     } else {
-      navigate("/login"); // Navigate to login if no token
+      setIsloggedin(false);
     }
-  }, [setIsloggedin, setToken, navigate]);
+  }, [setToken, setIsloggedin]);
+
+  if (!isloggedin) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-gray-100">
+        <Navigate to="/login" replace />
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen">
-      {!isloggedin ? (
+    <div className="min-h-screen bg-gray-100 text-black">
+      <header className="bg-black text-white p-4">
+        <h1 className="text-2xl font-semibold">Admin Panel</h1>
+      </header>
+      <main className="p-6">
         <Routes>
-          <Route element={<Login />} path="/login" />
-          <Route path="*" element={<Navigate to="/login" />} />
+          {/* Public Route */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
+          <Route path="/" element={<ListProducts />} />
+          <Route path="/add-product" element={<AddProduct />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
+
+          <Route path="/delete-product/:id" element={<DeleteProduct />} />
         </Routes>
-      ) : (
-        <>
-          <Navbar />
-          <div className="flex w-full flex-col sm:flex-row">
-            <Sidebar />
-            <div className="w-[70%] ml-[max(5vw,25px)] my-8">
-              <Routes>
-                <Route element={<Add />} path="/add" />
-                <Route element={<List />} path="/list" />
-                <Route element={<Order />} path="/order" />
-                <Route path="*" element={<Navigate to="/add" />} />
-              </Routes>
-            </div>
-          </div>
-        </>
-      )}
+      </main>
     </div>
   );
 };

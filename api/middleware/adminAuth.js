@@ -1,31 +1,35 @@
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 const adminAuth = async (req, res, next) => {
   try {
-    // Get token from cookies
     const { token } = req.cookies;
     if (!token) {
-      return res
-        .status(401)
-        .json({ success: false, message: "Authentication token not found" });
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required",
+      });
     }
 
-    // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Ensure the email matches the admin email
     if (decoded.email !== process.env.ADMIN_EMAIL) {
-      return res
-        .status(403)
-        .json({ success: false, message: "Unauthorized access" });
+      return res.status(403).json({
+        success: false,
+        message: "Unauthorized access",
+      });
     }
 
-    next(); // Token valid, proceed to the next middleware
+    req.admin = decoded;
+    next();
   } catch (error) {
-    console.error("Authentication error:", error);
+    console.error("Auth error:", error);
     return res.status(403).json({
       success: false,
-      message: "Invalid or expired token. Please log in again.",
+      message:
+        error.name === "TokenExpiredError"
+          ? "Session expired. Please log in again."
+          : "Invalid authentication token",
     });
   }
 };

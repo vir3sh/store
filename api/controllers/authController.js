@@ -102,17 +102,34 @@ export const adminlogin = async (req, res) => {
       password === process.env.ADMIN_PASSWORD
     ) {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-        expiresIn: "20d",
+        expiresIn: "2h",
       });
       // res.json({ success: true, token });
       // console.log("generated token is ", token);
+      // res.cookie("token", token, {
+      //   httpOnly: true,
+      //   secure: process.env.NODE_ENV === "production",
+      //   sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+      //   maxAge: 20 * 24 * 60 * 60 * 1000, // 20 days
+      // });
+      // return res.json({ success: true, message: "login successful" });
+
       res.cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
-        maxAge: 20 * 24 * 60 * 60 * 1000, // 20 days
+        sameSite: "strict",
+        maxAge: 2 * 60 * 60 * 1000, // 2 hours
       });
-      return res.json({ success: true, message: "login successful" });
+
+      return res.json({
+        success: true,
+        message: "Admin login successful",
+      });
+
+      return res.status(401).json({
+        success: false,
+        message: "Invalid credentials",
+      });
 
       // Send response
     } else {
