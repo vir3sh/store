@@ -55,7 +55,7 @@ const SingleProduct = () => {
                 key={index}
                 src={image}
                 alt={`Product Image ${index + 1}`}
-                className="w-32 h-32 object-cover rounded"
+                className="w-32 h-32 object-cover rounded-md border  border-[#776969]"
               />
             ))
           ) : (

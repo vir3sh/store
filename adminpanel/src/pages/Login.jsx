@@ -19,6 +19,8 @@ const Login = () => {
         { withCredentials: true }
       );
 
+      console.log("API Response:", response.data); // De
+
       if (response.data.success) {
         // Store token in context and localStorage
         setToken(response.data.token);

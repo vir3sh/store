@@ -14,9 +14,8 @@ const Footer = () => {
           </p>
         </div>
 
-<<<<<<< HEAD
         <p className="text-sm text-black">&copy; Created by Ankit</p>
-=======
+
         {/* Social Links Section */}
         <div className="text-center sm:text-left mb-6 sm:mb-0">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">
@@ -64,7 +63,6 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="border-t mt-6 pt-4 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} E-COMMERCE STORE. All Rights Reserved.
->>>>>>> 1f426a5552738d0fc7b9faf83ecf3506b2fd737a
       </div>
     </footer>
   );

@@ -102,7 +102,7 @@ export const adminlogin = async (req, res) => {
       password === process.env.ADMIN_PASSWORD
     ) {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-        expiresIn: "2h",
+        expiresIn: "24d",
       });
       // res.json({ success: true, token });
       // console.log("generated token is ", token);
@@ -118,17 +118,13 @@ export const adminlogin = async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "strict",
-        maxAge: 2 * 60 * 60 * 1000, // 2 hours
+        maxAge: 24 * 60 * 60 * 1000,
       });
 
       return res.json({
         success: true,
         message: "Admin login successful",
-      });
-
-      return res.status(401).json({
-        success: false,
-        message: "Invalid credentials",
+        token,
       });
 
       // Send response
