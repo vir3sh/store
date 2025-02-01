@@ -4,15 +4,7 @@ import productModel from "../models/Product.js";
 //For Adding Product
 export const addProduct = async (req, res) => {
   try {
-    const {
-      name,
-      description,
-      price,
-      category,
-      subCategory,
-      sizes,
-      bestseller,
-    } = req.body;
+    const { name, description, price, category, sizes, bestseller } = req.body;
 
     // Check if files are uploaded
     if (!req.files || req.files.length === 0) {
@@ -30,7 +22,6 @@ export const addProduct = async (req, res) => {
       description,
       price: Number(price),
       category,
-      subCategory,
       sizes: JSON.parse(sizes), // Convert sizes string to array
       bestseller: bestseller === "true", // Convert to boolean
       images: imagePaths, // Store image paths in the database

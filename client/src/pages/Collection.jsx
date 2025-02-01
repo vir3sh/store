@@ -64,7 +64,7 @@ const Collection = () => {
           <div
             className={`${
               visible ? "block" : "hidden"
-            } sm:block transition-all duration-300 border p-5 rounded border-black ease-in-out`}
+            } sm:block transition-all duration-300 border p-5 rounded  border-black ease-in-out`}
           >
             <div className="space-y-2">
               {["Running", "Lifestyle", "Classic", "Soccer"].map((type) => (
