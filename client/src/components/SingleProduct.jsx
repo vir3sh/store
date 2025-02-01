@@ -23,7 +23,7 @@ function SingleProduct({ id, title, price, image, rating }) {
       <div className="product-card group overflow-hidden border border-[#c5b9b9] bg-white shadow-lg rounded-md transform transition hover:scale-105">
         <div className="product-image">
           <img
-            className="w-full h-[300px] object-fill rounded"
+            className="w-full h-[300px] object-cover rounded"
             src={Array.isArray(image) ? image[0] : image}
             alt={title}
           />

@@ -72,18 +72,17 @@ function Navbar() {
               <div className="absolute bg-white border border-gray-300 rounded-md shadow-lg mt-2 z-10 right-0 min-w-full">
                 <ul className="flex flex-col text-black">
                   <Link
-                    to="/account"
                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer w-32"
                     onClick={closeDropdown} // Close dropdown on click
                   >
                     My Account
                   </Link>
-                  <li
+                  {/* <li
                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                     onClick={closeDropdown} // Close dropdown on click
                   >
                     Logout
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             )}

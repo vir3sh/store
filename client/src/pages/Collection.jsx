@@ -7,49 +7,46 @@ const Collection = () => {
   const { products } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [categoryFilter, setCategoryFilter] = useState([]);
-  const [sortOption, setSortOption] = useState("1"); // Default is "Sort By Relevance"
+  const [typeFilter, setTypeFilter] = useState([]);
+  const [sortOption, setSortOption] = useState("1"); // Default: Sort By Relevance
 
   useEffect(() => {
-    if (products && products.length > 0) {
-      setLatestProducts(products);
-    }
+    setLatestProducts(products);
   }, [products]);
 
-  const handleCategoryChange = (category) => {
-    setCategoryFilter(
+  const handleTypeChange = (type) => {
+    setTypeFilter(
       (prev) =>
-        prev.includes(category)
-          ? prev.filter((item) => item !== category) // Remove category if already selected
-          : [...prev, category] // Add category if not selected
+        prev.includes(type)
+          ? prev.filter((item) => item !== type) // Remove if already selected
+          : [...prev, type] // Add if not selected
     );
   };
 
-  const filterAndSortProducts = () => {
+  useEffect(() => {
     let filteredProducts = products;
 
-    // Filter by category
-    if (categoryFilter.length > 0) {
+    // Filter by type
+    if (typeFilter.length > 0) {
       filteredProducts = products.filter((product) =>
-        categoryFilter.includes(product.category)
+        typeFilter.includes(product.type)
       );
     }
 
     // Sort by selected option
+    const sortedProducts = [...filteredProducts]; // Create a new array to avoid mutating state directly
     if (sortOption === "2") {
-      // High to Low
-      filteredProducts.sort((a, b) => b.price - a.price);
+      sortedProducts.sort(
+        (a, b) => parseFloat(b.price) - parseFloat(a.price) // High to Low
+      );
     } else if (sortOption === "3") {
-      // Low to High
-      filteredProducts.sort((a, b) => a.price - b.price);
+      sortedProducts.sort(
+        (a, b) => parseFloat(a.price) - parseFloat(b.price) // Low to High
+      );
     }
 
-    setLatestProducts(filteredProducts);
-  };
-
-  useEffect(() => {
-    filterAndSortProducts();
-  }, [categoryFilter, sortOption]);
+    setLatestProducts(sortedProducts);
+  }, [typeFilter, sortOption, products]);
 
   return (
     <div>
@@ -57,9 +54,9 @@ const Collection = () => {
 
       <div className="flex flex-col lg:flex-row w-full items-start gap-8 p-6">
         {/* Filter Section */}
-        <div className="w-full lg:w-1/5  rounded  ">
+        <div className="w-full lg:w-1/5 rounded">
           <p
-            className="text-2xl font-semibold mb-4 sm:block   cursor-pointer"
+            className="text-2xl font-semibold mb-4 sm:block cursor-pointer"
             onClick={() => setVisible(!visible)}
           >
             Filters
@@ -70,25 +67,19 @@ const Collection = () => {
             } sm:block transition-all duration-300 border p-5 rounded border-black ease-in-out`}
           >
             <div className="space-y-2">
-              {[
-                "Mobile",
-                "Laptop",
-                "Monitor",
-                "HeadPhones",
-                "Keyboard",
-                "Mouse",
-              ].map((category) => (
+              {["Running", "Lifestyle", "Classic", "Soccer"].map((type) => (
                 <label
-                  key={category}
+                  key={type}
                   className="flex items-center gap-3 cursor-pointer"
                 >
                   <input
                     className="w-4 h-4"
                     type="checkbox"
-                    value={category}
-                    onChange={() => handleCategoryChange(category)}
+                    value={type}
+                    checked={typeFilter.includes(type)}
+                    onChange={() => handleTypeChange(type)}
                   />
-                  <span className="text-base">{category}</span>
+                  <span className="text-base">{type}</span>
                 </label>
               ))}
             </div>
@@ -105,8 +96,8 @@ const Collection = () => {
               onChange={(e) => setSortOption(e.target.value)}
             >
               <option value="1">Sort By Relevance</option>
-              <option value="2">Sort By Low to High</option>
-              <option value="3">Sort By High to Low</option>
+              <option value="2">Sort By High to Low</option>
+              <option value="3">Sort By Low to High</option>
             </select>
           </div>
 

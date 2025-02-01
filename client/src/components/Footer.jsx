@@ -36,7 +36,7 @@ function Footer() {
           </a>
         </div>
 
-        <p className="text-sm text-black">&copy; Created by Viresh</p>
+        <p className="text-sm text-black">&copy; Created by Ankit</p>
       </div>
     </footer>
   );
