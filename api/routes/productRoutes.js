@@ -14,6 +14,6 @@ const router = express.Router();
 router.post("/add", adminAuth, upload.array("images", 5), addProduct);
 router.get("/list", adminAuth, listProduct);
 router.get("/single", adminAuth, singleProduct);
-router.post("/delete", adminAuth, deleteProduct);
+router.delete("/delete/:productId", adminAuth, deleteProduct);
 
 export default router;

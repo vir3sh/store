@@ -4,7 +4,15 @@ import productModel from "../models/Product.js";
 //For Adding Product
 export const addProduct = async (req, res) => {
   try {
-    const { name, description, price, category, sizes, bestseller } = req.body;
+    const {
+      name,
+      description,
+      price,
+      category,
+
+      sizes,
+      bestseller,
+    } = req.body;
 
     // Check if files are uploaded
     if (!req.files || req.files.length === 0) {
@@ -22,6 +30,7 @@ export const addProduct = async (req, res) => {
       description,
       price: Number(price),
       category,
+      subCategory,
       sizes: JSON.parse(sizes), // Convert sizes string to array
       bestseller: bestseller === "true", // Convert to boolean
       images: imagePaths, // Store image paths in the database
@@ -44,6 +53,8 @@ export const addProduct = async (req, res) => {
 //for listing product
 export const listProduct = async (req, res) => {
   try {
+    const token = req.cookies.token;
+    // console.log("token from list", token);
     const product = await productModel.find({});
     res.json({ success: true, product });
   } catch (error) {
@@ -67,8 +78,13 @@ export const singleProduct = async (req, res) => {
 //delete product
 export const deleteProduct = async (req, res) => {
   try {
-    const { productId } = req.body;
-    await productModel.findByIdAndDelete(productId);
+    const { productId } = req.params;
+    const deleteProduct = await productModel.findByIdAndDelete(productId);
+    if (!deleteProduct) {
+      return res
+        .status(404)
+        .json({ success: false, error: "product not found" });
+    }
     return res.json({ success: true, message: "Product deleted" });
   } catch (error) {
     console.log(error);

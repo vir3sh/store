@@ -3,8 +3,15 @@ import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import myDB from "./config/myDB.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
+const corsOptions = {
+  origin: "http://localhost:5173", // Replace with your frontend URL
+  credentials: true, // Allow credentials
+};
+app.use(cors(corsOptions));
+
 app.use(cookieParser());
 
 myDB();

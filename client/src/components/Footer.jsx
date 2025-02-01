@@ -1,45 +1,73 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className=" text-white py-6">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <p className="text-sm mb-4">
-          {/* &copy; 2024 Your Company. All rights reserved. */}
-        </p>
-
-        {/* Social Media Links */}
-        <div className="flex justify-center gap-6 mb-4">
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook className="w-6 h-6 text-blue-600 hover:text-blue-800" />
-          </a>
-
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTwitter className="w-6 h-6 text-blue-400 hover:text-blue-600" />
-          </a>
-
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className="w-6 h-6 text-pink-600 hover:text-pink-800" />
-          </a>
+    <footer className="bg-gray-100 border-t p-6">
+      <div className="flex flex-col sm:flex-row justify-around items-center max-w-7xl mx-auto">
+        {/* Brand Section */}
+        <div className="text-center sm:text-left mb-6 sm:mb-0">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            E-COMMERCE STORE
+          </h1>
+          <p className="text-gray-600 mt-2">
+            Your one-stop shop for all your needs.
+          </p>
         </div>
 
+<<<<<<< HEAD
         <p className="text-sm text-black">&copy; Created by Ankit</p>
+=======
+        {/* Social Links Section */}
+        <div className="text-center sm:text-left mb-6 sm:mb-0">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            Social Links
+          </h2>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-gray-800 transition"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-gray-800 transition"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-gray-800 transition"
+              >
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Section */}
+        <div className="text-center sm:text-left">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            Contact Us
+          </h2>
+          <p className="text-gray-600">+12345 67890</p>
+          <p className="text-gray-600">user@email.com</p>
+          <p className="text-gray-600">Thane, Mumbai, India</p>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="border-t mt-6 pt-4 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} E-COMMERCE STORE. All Rights Reserved.
+>>>>>>> 1f426a5552738d0fc7b9faf83ecf3506b2fd737a
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

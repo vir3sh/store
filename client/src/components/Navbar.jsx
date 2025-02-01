@@ -1,45 +1,18 @@
-import React, { useContext, useState } from "react";
-import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
-import { MdOutlineAccountCircle } from "react-icons/md";
-import { ImCross } from "react-icons/im";
-import logo from "../assets/logo.jpg";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BiMenuAltRight } from "react-icons/bi";
-import { MdKeyboardBackspace } from "react-icons/md";
-import { ShopContext } from "../context/ShopContext";
-
-// import { useNavigate } from "react-router-dom";
-
-function Navbar() {
-  const products = useContext(ShopContext);
-  const [Visible, setVisible] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for controlling dropdown visibility
-
-  // const navigate = useNavigate();
-
-  // const takeToCart = async () => {
-  //   navigate("/account");
-  //   setSection("cart");
-  // };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prevState) => !prevState); // Toggle dropdown visibility
-  };
-
-  // Function to close dropdown when clicking on "My Account" or "Logout"
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
-  };
+const Navbar = () => {
+  const [visible, setVisible] = useState(false);
 
   return (
-    <div className="flex justify-between p-2 items-center border-b border-b-black border-solid">
-      <div className="left">
-        <Link to="/">
-          {/* <img src={logo} className="h-14" alt="" /> */}
-          <h1 className="text-4xl ">LOGO</h1>
-        </Link>
-      </div>
+    <nav className=" top-1 z-50">
+      <div className="bg-black p-4 text-[18px] max-w-[1250px]  items-center mx-auto rounded-xl my-2 ">
+        <div className="flex justify-between text-white ">
+          <div className="left">Logo</div>
+          <div className="right hidden sm:block ">
+            <ul className="flex gap-4">
+              <Link to={"/home"}>HOME</Link>
 
+<<<<<<< HEAD
       <div className="hidden sm:flex flex-row list-none gap-3 ">
         <Link className=" text-xl" to={"/"}>
           Home
@@ -108,42 +81,58 @@ function Navbar() {
           >
             <MdKeyboardBackspace />
             <p>Back</p>
+=======
+              <Link to={"/collection"}>COLLECTION</Link>
+              <Link to={"/about"}>ABOUT</Link>
+              <Link to={"/contact"}>CONTACT</Link>
+            </ul>
+>>>>>>> 1f426a5552738d0fc7b9faf83ecf3506b2fd737a
           </div>
-          <div className="li my-4 flex  flex-col">
-            <Link
-              to={"/"}
-              onClick={() => setVisible(false)}
-              className="list-none p-3 border-black border "
-            >
-              Home
-            </Link>
-            <Link
-              to={"/collection"}
-              onClick={() => setVisible(false)}
-              className="list-none p-3 border-black border"
-            >
-              Collection
-            </Link>
-            <Link
-              to={"/about"}
-              onClick={() => setVisible(false)}
-              className="list-none p-3 border-black border"
-            >
-              About
-            </Link>
-            <Link
-              to={"/contact"}
-              onClick={() => setVisible(false)}
-              className="list-none p-3 border-black border"
-            >
-              {" "}
-              Contact
-            </Link>
+
+          <div onClick={() => setVisible(true)} className="block  sm:hidden">
+            <div className="text-xl">=</div>
+          </div>
+
+          <div
+            className={`absolute ${
+              visible ? "block" : "hidden"
+            } bg-black w-full ml-[-16px] p-3   `}
+          >
+            <ul className="   min-h-screen text-white gap-4 flex flex-col ">
+              <Link
+                to={"/home"}
+                className="p-2 border-b border-white"
+                onClick={() => setVisible(false)}
+              >
+                HOME
+              </Link>
+              <Link
+                to={"/collection"}
+                className="p-2 border-b border-white"
+                onClick={() => setVisible(false)}
+              >
+                COLLECTION
+              </Link>
+              <Link
+                to={"/about"}
+                className="p-2 border-b border-white"
+                onClick={() => setVisible(false)}
+              >
+                ABOUT
+              </Link>
+              <Link
+                to={"/contact"}
+                className="p-2 border-b border-white"
+                onClick={() => setVisible(false)}
+              >
+                CONTACT
+              </Link>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

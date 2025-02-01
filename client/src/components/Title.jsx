@@ -1,13 +1,15 @@
-// eslint-disable-next-line react/prop-types
-function Title({ text1, text2 }) {
+import React from "react";
+
+const Title = ({ text1, text2 }) => {
   return (
-    <div className="flex flex-row  justify-center p-7 m-4">
-      <p className="text-5xl timesroman font-medium">
-        {text1}
-        <span className="text-3xl"> {text2}</span>
-      </p>
+    <div>
+      <div className="mx-6 my-6 p-3 text-center">
+        <p className="text-4xl font-normal  ">
+          {text1} <span className="timesroman"> {text2} </span>{" "}
+        </p>
+      </div>
     </div>
   );
-}
+};
 
 export default Title;

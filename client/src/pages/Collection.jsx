@@ -54,7 +54,11 @@ const Collection = () => {
 
       <div className="flex flex-col lg:flex-row w-full items-start gap-8 p-6">
         {/* Filter Section */}
+<<<<<<< HEAD
         <div className="w-full lg:w-1/5 rounded">
+=======
+        <div className="w-full lg:w-1/5 border border-black rounded shadow-lg p-6">
+>>>>>>> 1f426a5552738d0fc7b9faf83ecf3506b2fd737a
           <p
             className="text-2xl font-semibold mb-4 sm:block cursor-pointer"
             onClick={() => setVisible(!visible)}
@@ -64,7 +68,11 @@ const Collection = () => {
           <div
             className={`${
               visible ? "block" : "hidden"
+<<<<<<< HEAD
             } sm:block transition-all duration-300 border p-5 rounded  border-black ease-in-out`}
+=======
+            } sm:block transition-all duration-300 ease-in-out`}
+>>>>>>> 1f426a5552738d0fc7b9faf83ecf3506b2fd737a
           >
             <div className="space-y-2">
               {["Running", "Lifestyle", "Classic", "Soccer"].map((type) => (
@@ -88,7 +96,7 @@ const Collection = () => {
 
         {/* Products Section */}
         <div className="w-full lg:w-4/5">
-          <div className="flex flex-col sm:flex-row justify-between mb-4">
+          <div className="flex flex-row justify-between mb-4">
             <h2 className="text-2xl font-semibold">Choose from the best</h2>
             <select
               className="border border-black rounded px-3 py-2 text-sm"

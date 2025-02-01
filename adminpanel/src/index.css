@@ -62,3 +62,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.active{
+  background-color: rgb(160, 158, 155);
+  border-color:black;
+}
