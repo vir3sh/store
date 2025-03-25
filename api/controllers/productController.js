@@ -87,19 +87,19 @@ export const addProduct = async (req, res) => {
 //for listing product
 export const listProduct = async (req, res) => {
   try {
-    const token = req.cookies.token;
-    // console.log("token from list", token);
-    const product = await productModel.find({});
+    const products = await productModel.find({}).limit(50); // Fetch max 50 products to prevent timeouts
+
     if (products.length === 0) {
       return res.json({ success: false, message: "No products found" });
     }
 
-    res.json({ success: true, product });
+    res.json({ success: true, products });
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: "no product found" });
+    console.error("Error fetching products:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
 
 //single product
 export const singleProduct = async (req, res) => {
