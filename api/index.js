@@ -19,6 +19,11 @@ app.get("/", (req, res) => {
   console.log("API is working");
   res.send("API is working");
 });
+
+app.get("/test", (req, res) => {
+  console.log("API is working in vercl");
+  res.send("API is working");
+});
 app.use(express.json());
 app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes);
