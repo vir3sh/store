@@ -90,6 +90,10 @@ export const listProduct = async (req, res) => {
     const token = req.cookies.token;
     // console.log("token from list", token);
     const product = await productModel.find({});
+    if (products.length === 0) {
+      return res.json({ success: false, message: "No products found" });
+    }
+
     res.json({ success: true, product });
   } catch (error) {
     console.log(error);
